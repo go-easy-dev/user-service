@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: user-service
+  data:
+    mongodb:
+      database: user-service
+      host: localhost
+      port: 27017
