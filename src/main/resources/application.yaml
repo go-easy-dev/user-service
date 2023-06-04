@@ -3,11 +3,12 @@ spring:
     name: user-service
   data:
     mongodb:
-      database: user-service
       host: localhost
       port: 27017
       password: bdung
       username: mongoadmin
+      authentication-database: admin
+
   mail:
     host: smtp.mail.ru
     port: 465
@@ -20,12 +21,6 @@ spring:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
-
-de:
-  flapdoodle:
-    mongodb:
-      embedded:
-        version: 6.0.5
 
 server:
   port:
