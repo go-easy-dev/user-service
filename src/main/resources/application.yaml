@@ -3,7 +3,7 @@ spring:
     name: user-service
   data:
     mongodb:
-      host: rs01/rc1a-iaj8kf6jaomgk9lf.mdb.yandexcloud.net
+      host: rc1a-iaj8kf6jaomgk9lf.mdb.yandexcloud.net
       port: 27018
       password: goeasyuser
       username: user-service
