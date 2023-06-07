@@ -3,11 +3,11 @@ spring:
     name: user-service
   data:
     mongodb:
-      host: localhost
-      port: 27017
-      password: bdung
-      username: mongoadmin
-      authentication-database: admin
+      host: rs01/rc1a-iaj8kf6jaomgk9lf.mdb.yandexcloud.net
+      port: 27018
+      password: goeasyuser
+      username: user-service
+      authentication-database: user-service
 
   mail:
     host: smtp.mail.ru
