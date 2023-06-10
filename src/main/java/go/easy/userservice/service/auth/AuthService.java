@@ -59,6 +59,7 @@ public class AuthService {
         if (verification.isPresent()) {
             verificationService.confirmVerification(verification.get().getId());
             return SignInResponse.builder()
+                    .userId(user.getId())
                     .accessToken(jwtService.generateToken(user.getId()))
                     .build();
         } else {

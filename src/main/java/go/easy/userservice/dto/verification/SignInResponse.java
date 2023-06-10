@@ -9,5 +9,7 @@ import lombok.Data;
 public class SignInResponse {
 
     @NotBlank
+    private String userId;
+    @NotBlank
     private String accessToken;
 }
