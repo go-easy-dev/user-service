@@ -30,7 +30,7 @@ public class AuthController {
     @PostMapping("/signUp")
     ResponseEntity<String> signUp(@RequestBody @Valid CreateUserRequest createUserRequest) {
         authService.signUp(createUserRequest);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("Success");
     }
 
     @Operation(summary = "аутентификация пользователя")
@@ -43,7 +43,7 @@ public class AuthController {
     @PutMapping("/otp/send/{email}")
     ResponseEntity<String> resendOtp(@PathVariable String email) {
         authService.sendOtp(email);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("Success");
     }
 
     @Operation(summary = "валидация токена")
