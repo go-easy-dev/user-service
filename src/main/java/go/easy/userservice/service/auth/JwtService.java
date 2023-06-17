@@ -18,7 +18,7 @@ import java.util.Date;
 public class JwtService {
 
     private static final String SECRET_KEY = "STloj9a+gvYEf8F258ltffCfrHIX42DCkmqEEGszL8bhOKC3YyR5atOm6fk1zL7zPsQBkJszwSIp9lmDBCBNXA==";
-    private static final long EXPIRATION_TIME = 86400000; // 24 часа
+    private static final long EXPIRATION_TIME = 604800000; // 24 часа
 
     public String generateToken(String userId) {
         log.info("generating token for user: {}", userId);
