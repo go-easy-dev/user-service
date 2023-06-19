@@ -17,7 +17,7 @@ public class NotificationSenderService {
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(email);
-        message.setSubject("Код авторизации");
+        message.setSubject("Код авторизации: " + otp);
         message.setText(text);
         message.setFrom("robot@goeasy.space");
 
