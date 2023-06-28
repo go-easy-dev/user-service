@@ -19,6 +19,10 @@ spring:
       "mail.smtp.ssl.enable": true
       "mail.auth": true
 
+server:
+  error:
+    include-message: always
+
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
