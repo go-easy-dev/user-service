@@ -16,6 +16,6 @@ public interface UserMapper {
 	@Mapping(target = "middleName", ignore = true)
 	@Mapping(target = "birthDate", ignore = true)
 	@Mapping(target = "phone", ignore = true)
+	@Mapping(target = "email", expression = "java(request.getEmail().toLowerCase())")
 	UserProfile map(CreateUserRequest request);
-
 }

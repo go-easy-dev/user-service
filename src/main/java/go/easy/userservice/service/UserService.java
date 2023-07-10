@@ -21,7 +21,7 @@ public class UserService {
 
     public UserProfile getUserByEmail(String email) {
         log.info("trying to get user by email {}", email);
-        return userRepository.findByEmail(email)
+        return userRepository.findByEmail(email.toLowerCase())
                 .orElseThrow(() -> new UserNotFoundException(HttpStatus.NOT_FOUND, "can't find user by email: " + email));
     }
 
@@ -51,7 +51,7 @@ public class UserService {
     }
 
     private void checkUserExist(String email) {
-        userRepository.findByEmail(email)
+        userRepository.findByEmail(email.toLowerCase())
                 .ifPresent(user -> {
                     throw new UserAlreadyExistException(HttpStatus.BAD_REQUEST, "user already exist: " + user.getId());
                 });

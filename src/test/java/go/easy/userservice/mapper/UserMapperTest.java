@@ -22,8 +22,9 @@ public class UserMapperTest {
         // then
         Assertions.assertThat(actual.getId()).isNotBlank();
         Assertions.assertThat(actual)
+                .hasFieldOrPropertyWithValue("email", given.getEmail().toLowerCase())
                 .usingRecursiveComparison()
-                .ignoringFields("id", "secondName", "secondName", "middleName", "birthDate", "phone")
+                .ignoringFields("id", "secondName", "secondName", "middleName", "birthDate", "phone", "email")
                 .isEqualTo(given);
     }
 }
