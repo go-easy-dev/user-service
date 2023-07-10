@@ -41,7 +41,7 @@ public class VerificationService {
     public Optional<VerificationEntity> checkVerification(String userId, String email, String otp) {
         log.info("try to find verification for user: {}", userId);
         return repository.findByUserIdAndVerificationCode(userId, otp)
-                .filter(verification -> verification.getVerificationProvider().equals(email))
+                .filter(verification -> verification.getVerificationProvider().equals(email.toLowerCase()))
                 .filter(verification -> verification.getStatus() == VerificationStatus.NOT_VERIFIED)
                 .filter(verification -> verification.getExpiryDate().isAfter(LocalDateTime.now()));
     }
