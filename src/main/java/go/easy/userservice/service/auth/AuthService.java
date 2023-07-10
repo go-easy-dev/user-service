@@ -63,6 +63,7 @@ public class AuthService {
                     .accessToken(jwtService.generateToken(user.getId()))
                     .build();
         } else {
+            log.error("User can't be verified by request: {}", request);
             throw new VerificationException(HttpStatus.UNAUTHORIZED, "request can't be authorized: " + request);
         }
     }
